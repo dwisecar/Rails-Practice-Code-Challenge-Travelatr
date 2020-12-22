@@ -1,0 +1,9 @@
+<h1>All Bloggers</h1>
+<%= link_to 'Sort By Posts', sorted_path %>
+<ul>
+<% @bloggers.each do |b|%>
+    <li><%= link_to b.name, b %>. Posts: <%= b.posts.count%></li>
+<% end %>
+</ul>
+<%= link_to 'Create New Blogger', new_blogger_path %><br>
+

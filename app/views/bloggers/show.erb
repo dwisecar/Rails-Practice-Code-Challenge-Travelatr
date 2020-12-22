@@ -1,0 +1,16 @@
+<%= @blogger.name %>
+<ul>
+<% @blogger.posts.each do |post|%>
+    <li><%= link_to post.title, post_path(post) %></li>
+<% end %>
+</ul>
+<%= link_to "Create Post", new_post_path %>
+<br>
+<p>Featured post: </p>
+<% if @blogger.featured_post %>
+    <%= link_to @blogger.featured_post.title, post_path(@blogger.featured_post) %>
+<% else %>
+    <p>No Featured Posts</p>
+<%end%>
+<br>
+<%= button_to "Delete Blogger", @blogger, method: :delete%>
